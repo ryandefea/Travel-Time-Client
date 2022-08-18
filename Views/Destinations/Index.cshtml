@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using TravelClient.Models;
+@model List<TravelClient.Models.Destination>;
+
+<h1>New Destination:</h1>
+
+<form action="/destinations" method="post">
+  <label for="city">city</label>
+  <input id="city" name="city" type="text">
+  <label for="country">country</label>
+  <input id="country" name="country" type="text">
+  <label for="review">review</label>
+  <input id="review" name="review" type="text">
+  <label for="rating">rating</label>
+  <input id="rating" name="rating" type="number">
+  <button type="submit">Go!</button>
+</form>
+
+<h1>All Destinations:</h1>
+
+<ol>
+@foreach (Destination destination in Model)
+{
+    <ul>
+        <li>ID: @destination.DestinationId</li>
+        <li>City: @destination.City</li>
+        <li>Country: @destination.Country</li>
+        <li>Review: @destination.Review</li>
+        <li>Rating: @destination.Rating</li>
+    </ul>
+    <a href="/Destinations/Details/@(destination.DestinationId)"><p>View Details</p></a>
+    <br>
+}
+</ol>

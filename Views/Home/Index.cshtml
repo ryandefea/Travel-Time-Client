@@ -1,8 +1,22 @@
-﻿@{
+﻿ @{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@using TravelClient.Models;
+@model List<TravelClient.Models.Destination>;
+
+<h1>All Destinations:</h1>
+
+<ol>
+@foreach (Destination destination in Model)
+{
+    <ul>
+        <li>ID: @destination.DestinationId</li>
+        <li>Name: @destination.City</li>
+        <li>Species: @destination.Country</li>
+        <li>Age: @destination.Review</li>
+        <li>Rating: @destination.Rating</li>
+    </ul>
+    <br>
+}
+</ol> 

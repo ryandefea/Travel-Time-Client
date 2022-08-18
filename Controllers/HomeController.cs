@@ -20,7 +20,8 @@ namespace TravelClient.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var allDestinations = Destination.GetDestinations();
+            return View(allDestinations);
         }
 
         public IActionResult Privacy()

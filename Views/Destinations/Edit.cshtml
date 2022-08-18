@@ -1,0 +1,14 @@
+<h1>Edit Info:</h1>
+<form action="/Destinations/Details/@(Model.DestinationId)" method="post">
+  <label for="city">city</label>
+  <input id="city" name="city" type="text" value="@(Model.City)">
+  <label for="country">country</label>
+  <input id="country" name="country" type="text" value="@(Model.Country)">
+  <label for="review">review</label>
+  <input id="review" name="review" type="text" value="@(Model.Review)">
+  <label for="rating">rating</label>
+  <input id="rating" name="rating" type="number" value="@(Model.Rating)">
+  <button type="submit">Go!</button>
+</form>
+
+<a href="/Destinations/Details/@(Model.DestinationId)"><p>Return to Details</p></a>
